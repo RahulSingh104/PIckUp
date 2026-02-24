@@ -3,8 +3,12 @@ dotenv.config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const connectToDb = require('./db/db');
 
-app.use(cors());
+connectToDb();
+
+app.use(cors());  // this is to allow cross-origin requests, you can configure it as needed
+app.use(express.json()); // this is to parse JSON bodies
 
 
 
