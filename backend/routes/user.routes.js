@@ -11,5 +11,12 @@ router.post('/register',[
 
 console.log('user routes loaded')
 
+router.post('/login',[
+    body('email').isEmail().withMessage('please enter a valid email'),
+    body('password').isLength({min:6}).withMessage('password must be at least 6 characters a Long'),
+],userController.loginUser);
+ 
+
+router.get('/profile', userController.getUserProfile);
 
 module.exports = router;

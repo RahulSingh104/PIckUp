@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { selectFields } = require('express-validator/lib/field-selection');
 
 const userSchema = new mongoose.Schema({
     fullname:{
@@ -23,6 +24,7 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true,
+        select:false,
     },
     socketId:{
         type:String,
