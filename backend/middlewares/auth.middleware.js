@@ -17,4 +17,4 @@ module.exports.authUser = async(req,res,next) => {
     catch(error){
         return res.status(401).json({message:"Unauthorized"});
     }
-}
+}  /// new word 
